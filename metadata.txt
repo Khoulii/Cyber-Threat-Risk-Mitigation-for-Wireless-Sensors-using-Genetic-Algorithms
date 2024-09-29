@@ -1,0 +1,37 @@
+Event: Type of operation (1: sending, 2: receiving, 3: forwarding, 4: dropping).
+
+Time: Timestamp of the event.
+
+S_Node: Source sensor node number generating the traffic.
+
+Node_id: Sensor Node number where the event occurred.
+
+Rest_Energy: Remaining energy amount of the sensor node.
+
+Trace_Level: represent the level of tracing or logging that is being applied to the event or packet. Trace levels are often used to control the amount or type of information that is logged about a particular operation.
+
+Mac_Type_Pck: MAC variant of the packet (0-800).
+
+Source_IP_Port: Port number of the source sensor node.
+
+Des_IP_Port: Port number of the destination sensor node.
+
+Packet_Size: Size of the transmitted packets.
+
+TTL: Number of sensor nodes to which the packet can be transmitted before it's dropped.
+
+Hop_Count: Count of sensor nodes the packet has reached and transmitted.
+
+Broadcast_ID: The ID number of the broadcast packets.
+
+Dest_Node_Num: Number of the destination sensor node for the packet.
+
+Dest_Seq_Num: Sequence number of the traffic forwarded to the destination.
+
+Src_Node_ID: ID number of the source sensor node generating the traffic.
+
+Src_Seq_Num: Sequence number for the data forwarded to the destination.
+
+behaviour: Indicates whether there is an attack or not.
+
+Type: Classification of network traffic.
