@@ -166,22 +166,23 @@ I employed several predictive models to analyze the dataset:
 - Linear Regression:
 R² (SelectKBest): 0.618 (Moderate performance)
 R² (SelectFromModel): 0.0078 (Poor performance)
-The linear regression model explains 61.8% of the variance when using SelectKBest. However, using SelectFromModel significantly reduces the performance.
 
-- Decision Tree Regression:
+- Decision Tree:
 R² (SelectKBest): 1.0 (Perfect fit)
 R² (SelectFromModel): Also performs exceptionally well.
-Evaluation: The Decision Tree model performed perfectly with both feature selection techniques.
 
-- Random Forest Regression:
+- Random Forest:
 R² (SelectKBest): 0.9999999354 (Almost perfect)
 R² (SelectFromModel): Also performs exceptionally well.
-Evaluation: Random Forest Regression also achieved excellent predictive power, with minimal error.
 
 ### Evaluation
 - Effectiveness: Decision Tree and Random Forest models performed exceptionally well with near-zero error. Linear Regression was less effective, especially with SelectFromModel.
 - Limitations: Linear models assume linear relationships, which may not be sufficient for this dataset. Feature selection techniques can miss feature interactions and struggle with correlated features.
 - Potential Improvements: Further exploration of feature engineering or alternative feature selection methods could enhance performance, particularly for Linear Regression.
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/32a31975-4b47-4192-ac50-9ab37b292363" width="400">
+  <img src="https://github.com/user-attachments/assets/1d285d84-1f2e-4d3b-82a9-0514f083400b" width="400">
+</p>
 
 ## Conclusion
 The analysis highlights the importance of using advanced algorithms to mitigate cyber threats in wireless sensor networks. By using insights from data analytics, we can better understand the conditions under which attacks are more likely to occur and take preventative measures to protect network integrity.
