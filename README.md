@@ -8,5 +8,24 @@ The dataset has been extratced from the paper "WSN-BFSF: A New Dataset for Attac
 I have analyzed the dataset, derived from network traffic simulations, to identify patterns associated with different types of network attacks, such as Blackhole, Flooding, and Selective 
 Forwarding, using data analytics tools and techniques to derive actionable insights from raw network traffic data.
 #### Feature Analysis
-![image](https://github.com/user-attachments/assets/7d0cca99-8848-4d71-a97c-03edee5562a3)
+1. Type: Almost 85% of the type is no attack. The flooding shaped most of the attacks with around 10%.
+![image](https://github.com/user-attachments/assets/242a5ef0-f0cb-411b-aeee-caf7066d85d0)
+2. Event: Most of the blackhole attacks happened on the receiving event by almost 80%, and the dropping is the second most making around 20% of the attacks.
+![image](https://github.com/user-attachments/assets/c5147228-7c73-4afd-9f1c-305e44252e75)
+3. Node_id: Analyzing the nodes that faced blackhole attacks, in comparison of the other types.
+![image](https://github.com/user-attachments/assets/06f9eca2-6aa1-4fce-b8a2-9aa3599ba97f)
+4. Dest_Node_Num: When the Dest_Node_Num is between 36 and 40, the flooding percentage was 94%.
+![image](https://github.com/user-attachments/assets/a4a2de46-92e6-47aa-980f-c4880a2f608b)
+#### Finding
+The analysis conducted on the dataset plays a pivotal role in shaping effective business decisions by uncovering insights into network security and performance. By identifying patterns associated with different types of attacks, such as Flooding Attacks, the analysis offers a comprehensive understanding of potential vulnerabilities. 
+In this context, the findings show that when the hop count is between 3 and 7, TTL is between 24 and 28, and the time falls within the range of 65 to 100, there is a significant occurrence of Flooding Attacks, comprising 62% of cases, while the remaining 32% is considered normal network behaviour.
+This information is highly significant as it highlights specific conditions under which Flooding Attacks are more likely to occur. For instance, businesses can utilize these insights to implement targeted security measures during vulnerable time intervals and adjust network parameters to mitigate the risk of such attacks. Additionally, these findings underscore the need to strengthen network defences and proactively monitor for any anomalies that align with the identified patterns.
+![image](https://github.com/user-attachments/assets/fb7de93a-5b85-41b6-b17b-484d364c7958)
+![image](https://github.com/user-attachments/assets/5c42eb3a-e691-4ea4-8daf-7d6331ef3102)
+![image](https://github.com/user-attachments/assets/2ba0be4d-9425-4de9-b5f3-61c0eb745993)
+
+
+
+
+
 
