@@ -8,3 +8,5 @@ The dataset has been extratced from the paper "WSN-BFSF: A New Dataset for Attac
 I have analyzed the dataset, derived from network traffic simulations, to identify patterns associated with different types of network attacks, such as Blackhole, Flooding, and Selective 
 Forwarding, using data analytics tools and techniques to derive actionable insights from raw network traffic data.
 #### Feature Analysis
+![image](https://github.com/user-attachments/assets/7d0cca99-8848-4d71-a97c-03edee5562a3)
+
