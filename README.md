@@ -184,5 +184,91 @@ R² (SelectFromModel): Also performs exceptionally well.
   <img src="https://github.com/user-attachments/assets/1d285d84-1f2e-4d3b-82a9-0514f083400b" width="400">
 </p>
 
+## Prescriptive Analytics
+
+In this section, the goal is to identify the best possible solution to minimize network risk. The solution is derived using a weighted sum equation based on insights from both the descriptive and predictive analytics phases. By optimizing the weights of the equation, I can make informed decisions about network behavior under attack.
+
+### Objective Function
+
+I developed an objective function that calculates a risk score based on three key factors: `RateOfEnergyConsumption`, `TTL`, and `HopCount`. The function assigns weights (w1, w2, w3) to each factor to control their importance in the risk calculation.
+
+#### The Objective Function:
+- The fitness function takes **w1**, **w2**, and **w3** as inputs. These weights represent the relative importance of the three data columns (`RateOfEnergyConsumption`, `TTL`, `HopCount`) in the risk score computation.
+- The function multiplies each column by its respective weight and sums them to compute the overall risk score for each row in the dataset.
+  
+#### Constraint Checks:
+1. **Sum of weights (w1 + w2 + w3) must be ≤ 1.0**: If the sum exceeds 1.0, the function returns a large penalty value (9999999) to indicate an invalid solution.
+2. **Risk score must remain under 100**: If any row’s risk score exceeds 100, a large penalty value (9999999) is returned.
+3. **Minimum network risk score must be ≥ 50**: If the total risk score falls below 50, the function returns a large penalty value (9999999).
+  
+Additionally, the function filters the dataset to focus on rows where the `behaviour` column indicates the node is **under attack**, and it computes the minimum risk score among the filtered rows.
+
+### Optimization Algorithms
+
+To find the optimal weights for the objective function, I employed two optimization algorithms:
+
+1. **Genetic Algorithm (GA)**
+2. **Particle Swarm Optimization (PSO)**
+
+These algorithms explore various combinations of weights to minimize the risk score while adhering to the constraints.
+
+### Results and Insights
+
+#### Genetic Algorithm (GA):
+- **Best Solution**: [0.2138, 0.0293, 0.0048]
+- **Fitness Score**: 0.0286 (found during Run 12, Generation 81)
+  
+#### Particle Swarm Optimization (PSO):
+- **Best Solution**: [0.2801, 0.5063, 0] 
+- **Fitness Score**: 0.0 (found during Run 11, Iteration 2)
+
+The PSO algorithm provided the best solution with a fitness score of 0.0, which indicates that it perfectly met all constraints. Consequently, **PSO** is selected as the preferred optimization algorithm for this project.
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/2d83a423-e16e-4644-a441-4872a6be3182" width="400">
+</p>
+
+#### Weight Interpretation:
+- **w1 (Energy Consumption)**: Moderately significant, accounting for 28.0% of the risk assessment. This highlights the need to conserve energy in the network.
+- **w2 (TTL)**: The most significant factor, with a weight of 50.6%. Time-to-live (TTL) is critical in managing network risk.
+- **w3 (Hop Count)**: Low significance, with a weight of 0%, suggesting it has no measurable influence on the network risk in this context.
+
+### Optimal Threshold Value
+
+Based on the project’s goal of minimizing network risk, I identified a suitable threshold value for classifying nodes as "at risk" or "under attack":
+
+- **Optimal Threshold**: 12.151004
+
+#### Reasons for this Threshold:
+1. **Attack Capture**: This threshold captures **75% of under attack nodes**, making it highly effective for identifying potential risks.
+2. **Risk Mitigation**: It allows for a significant portion of nodes to be classified as at-risk, enabling proactive risk management and intervention.
+3. **Balanced Approach**: The threshold strikes a balance between sensitivity (capturing attacks) and specificity (avoiding false positives).
+
+Multiple statistical and random risk score values were tested, and this value proved to be the most balanced.
+
+### Results
+
+- **Fitness Values Distribution**: The box plot illustrates the deviation in fitness values for both PSO and GA. While GA exhibited smaller deviations, PSO achieved a lower minimum value.
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/634cba39-4e50-45e0-b374-6d2729247082" width="400">
+</p>
+
+- **Risk Score Comparison**: The following box plots compare risk score values between nodes under attack and normal nodes.
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/1267a857-1703-4fc3-b4dc-85ed3126a5a2" width="400">
+</p>
+
+- **Thresh Value**: The bar charts show that the threshold value (12.151004) captures a significant portion of nodes under attack (around 20%).
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/717cff06-51d4-4735-9f80-60e7ce330dcb" width="400">
+  <img src="https://github.com/user-attachments/assets/3c0d1e7f-6410-4401-a1cd-4b53633efcea" width="400">
+</p>
+
+- **Risk Score ≥ 17**: Nodes with a risk score greater than 17 might indicate a high-risk situation. However, further analysis is required as some of these values could be outliers.
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/acdb23c2-695b-41ac-b3aa-d388f1fac5b8" width="400">
+  <img src="https://github.com/user-attachments/assets/1923b8b6-b3b6-47a7-a758-1fc4188b6a90" width="400">
+</p>
+
 ## Conclusion
-The analysis highlights the importance of using advanced algorithms to mitigate cyber threats in wireless sensor networks. By using insights from data analytics, we can better understand the conditions under which attacks are more likely to occur and take preventative measures to protect network integrity.
+
+This project successfully applied a comprehensive analytics utilizing descriptive, predictive, and prescriptive analytics—to address cyber threat risk mitigation in wireless sensor networks. I was able to identify key risk factors, build predictive models, and optimize decisions for minimizing network risks.
