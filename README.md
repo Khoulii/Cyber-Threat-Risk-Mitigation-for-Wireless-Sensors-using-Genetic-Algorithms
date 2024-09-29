@@ -9,13 +9,13 @@ I have analyzed the dataset, derived from network traffic simulations, to identi
 Forwarding, using data analytics tools and techniques to derive actionable insights from raw network traffic data.
 #### Feature Analysis
 1. Type: Almost 85% of the type is no attack. The flooding shaped most of the attacks with around 10%.
-![image](https://github.com/user-attachments/assets/242a5ef0-f0cb-411b-aeee-caf7066d85d0)
+![image](https://github.com/user-attachments/assets/a6797e1b-c6e9-4101-9b5c-5fbc7611685d)
 2. Event: Most of the blackhole attacks happened on the receiving event by almost 80%, and the dropping is the second most making around 20% of the attacks.
-![image](https://github.com/user-attachments/assets/c5147228-7c73-4afd-9f1c-305e44252e75)
+![image](https://github.com/user-attachments/assets/972bdf60-07fe-40e3-8381-84a9ff31cb59)
 3. Node_id: Analyzing the nodes that faced blackhole attacks, in comparison of the other types.
-![image](https://github.com/user-attachments/assets/06f9eca2-6aa1-4fce-b8a2-9aa3599ba97f)
+![image](https://github.com/user-attachments/assets/dc65d115-b89a-4252-b67b-a00cb5a6ffa7)
 4. Dest_Node_Num: When the Dest_Node_Num is between 36 and 40, the flooding percentage was 94%.
-![image](https://github.com/user-attachments/assets/a4a2de46-92e6-47aa-980f-c4880a2f608b)
+![image](https://github.com/user-attachments/assets/0abc542c-c17f-496b-b3c8-9f61904897a6) ![image](https://github.com/user-attachments/assets/e59c75ce-76c7-4864-b85c-ff16fb358ba0)
 #### Finding
 The analysis conducted on the dataset plays a pivotal role in shaping effective business decisions by uncovering insights into network security and performance. By identifying patterns associated with different types of attacks, such as Flooding Attacks, the analysis offers a comprehensive understanding of potential vulnerabilities. 
 In this context, the findings show that when the hop count is between 3 and 7, TTL is between 24 and 28, and the time falls within the range of 65 to 100, there is a significant occurrence of Flooding Attacks, comprising 62% of cases, while the remaining 32% is considered normal network behaviour.
